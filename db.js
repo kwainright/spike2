@@ -1,7 +1,5 @@
 var mysql = require('mysql2');
 
-
-
 class Db {
   constructor( noRefresh = true ){
     if ( noRefresh ) this.createDb();
@@ -18,10 +16,6 @@ class Db {
     con.connect(function(err) {
       if (err) throw err;
       console.log("Connected!");
-      // con.query("CREATE DATABASE mydb", function (err, result) {
-      //   if (err) throw err;
-      //   console.log("Database created");
-      // });
     
       con.query(`DROP TABLE IF EXISTS myTable`, function (err, result) {
         if (err) throw err;
